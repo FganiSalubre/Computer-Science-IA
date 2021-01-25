@@ -59,9 +59,9 @@ public class GuiTirelife {
 	private JTextField noflapstextField;
 	private JTextField weightclienttextField;
 	private JTextField tirepressuretextField;
-	
+
 	private JTextPane outputArea;
-	
+
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 616, 429);
@@ -186,7 +186,8 @@ public class GuiTirelife {
 		frame.getContentPane().add(lblNewLabel_12);
 
 		choosetirescomboBox = new JComboBox();
-		choosetirescomboBox.setModel(new DefaultComboBoxModel(new String[] {"", "0 - Bridgestone", "1 - Komet", "2 - MG Tires"}));
+		choosetirescomboBox.setModel(
+				new DefaultComboBoxModel(new String[] { "", "0 - Bridgestone", "1 - Komet", "2 - MG Tires" }));
 		choosetirescomboBox.setBounds(402, 114, 116, 22);
 		frame.getContentPane().add(choosetirescomboBox);
 
@@ -212,13 +213,14 @@ public class GuiTirelife {
 		});
 		calculatebtnNewButton.setBounds(322, 287, 183, 25);
 		frame.getContentPane().add(calculatebtnNewButton);
-		
-		JTextPane outputArea = new JTextPane();
+
+		outputArea = new JTextPane();
 		outputArea.setBackground(Color.LIGHT_GRAY);
 		outputArea.setBounds(322, 186, 183, 89);
 		outputArea.setEditable(false);
 		frame.getContentPane().add(outputArea);
 	}
+
 	/**
 	 * Launch the application.
 	 */
@@ -243,28 +245,7 @@ public class GuiTirelife {
 
 	}
 
-//	public void actionPerformedweatherComboBox() {
-//		String choice;
-//		choice = weathercomboBox.getSelectedItem().toString();
-//		outputArea.setText(choice);
-//		while (true) {
-//			choice = (Tirelife.tire.getInput()) + "";
-//
-//			if (choice.equalsIgnoreCase("Sunny")) {
-//
-//				JOptionPane.showMessageDialog(null, "Equip Slick Tires");
-//
-//				break;
-//			} else if (choice.equalsIgnoreCase("Rainy")) {
-//
-//				JOptionPane.showMessageDialog(null, "Equip Wet Tires");
-//
-//				break;
-//			}
-//		} 
-//	}
-
-	private void calculatebtnNewButtonactionPerformed() throws Exception{
+	private void calculatebtnNewButtonactionPerformed() throws Exception {
 
 		weather = weathercomboBox.getSelectedItem().toString();
 		tyres_are_new = newtirescomboBox.getSelectedItem().toString();
@@ -282,43 +263,44 @@ public class GuiTirelife {
 		num_of_laps = Integer.parseInt(noflapstextField.getText());
 		weight_of_client = Integer.parseInt(weightclienttextField.getText());
 		tire_pressure = Float.parseFloat(tirepressuretextField.getText());
+
 		boolean valid = false;
 		while (!valid) {
 			int tire_type = temp_tire;
 			switch (tire_type) {
 //                Assigning value to calculate_life on the basis of user selection 
-				case 0:
-					type = "Bridgestone";
-					Tirelife.calculated_life = 150;
-					valid = true;
-					break;
-				case 1:
-					type = "MG Tires";
-					Tirelife.calculated_life = 120;
-					valid = true;
-					break;
-				case 2:
-					type = "Komet";
-					Tirelife.calculated_life = 100;
-					valid = true;
-					break;
-				default:
-					throw new Exception("Invalid input");
-			}
-			/*if (!"".equals(type)) {
+			case 0:
+				type = "Bridgestone";
+				Tirelife.calculated_life = 150;
+				valid = true;
 				break;
-			}*/
+			case 1:
+				type = "MG Tires";
+				Tirelife.calculated_life = 120;
+				valid = true;
+				break;
+			case 2:
+				type = "Komet";
+				Tirelife.calculated_life = 100;
+				valid = true;
+				break;
+			default:
+				throw new Exception("Invalid input");
+			}
+			/*
+			 * if (!"".equals(type)) { break; }
+			 */
 		}
-		
-		int calc_life = Calculation.calculate (Tirelife.calculated_life, track_distance, n_of_turns, racetrack_condition, tire_pressure,
-		num_of_laps, lap_used, weight_of_client);
+
+		int calc_life = Calculation.calculate(Tirelife.calculated_life, track_distance, n_of_turns, racetrack_condition,
+				tire_pressure, num_of_laps, lap_used, weight_of_client);
 		outputArea.setText("Tire Life Span : " + calc_life);
+
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	
 
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
