@@ -1,16 +1,16 @@
 package TirelifePackage;
 
 public class Calculation {
-	public static int calculate(int calculated_life, int track_distance, int n_of_turns, boolean racetrack_condition, float tire_pressure, int num_of_laps, int lap_used, float weight_of_client)
+	public static int calculate(int calculated_life, float track_distance, int n_of_turns, String racetrack_condition, float tire_pressure, int num_of_laps, int lap_used, float weight_of_client)
 	{
 //      deducting track_distance from calculated_life . if it's 2km , it will deduct 2 from the calculated_life
-		calculated_life = calculated_life - track_distance;
+		calculated_life = (int) (calculated_life - track_distance);
 
 //      deducting 0.5 of number of turns from the calculated_life 
 		calculated_life = (int) Math.rint(calculated_life - (n_of_turns * 0.5));
 
 //       If racetrack condition is Good we will deduct 1 
-		if (racetrack_condition) {
+		if (racetrack_condition == "Good") {
 			calculated_life = calculated_life - 1;
 		} else {
 //       If racetrack condition is Bad we will deduct 3 

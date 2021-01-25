@@ -2,7 +2,8 @@ package TirelifePackage;
 
 import java.util.Scanner;
 
-public class Tirelife extends Calculation{
+public class Tirelife extends Calculation {
+//  Declaring variables , objects
 	public static Tirelife tire = new Tirelife();
 	public static int calculated_life = 0;
 	public static String weather = "";
@@ -90,33 +91,6 @@ public class Tirelife extends Calculation{
 
 	public static void main(String[] args) {
 
-//        Declaring variables , objects
-//		Tirelife tire = new Tirelife();
-//		int calculated_life = 0;
-//
-//		String weather = "";
-//		boolean tyres_are_new;
-//		boolean tyres_vibrating;
-//		boolean tyres_grainy;
-//
-//		int track_distance = 0;
-//		int n_of_turns = 0;
-//		boolean racetrack_condition = false;
-//
-//		int lap_used = 0;
-//		float max_speed = 0;
-//		float min_speed = 0;
-//
-//		int num_of_laps = 0;
-//		float weight_of_client = 0;
-//
-//		String tire_chosen;
-//
-//		String type = "";
-//
-//		float tire_pressure = 0;
-
-//        Asking user to input weather
 		System.out.println("Please Enter Weather : ");
 		System.out.println("0. Sunny");
 		System.out.println("1. Rainy");
@@ -249,7 +223,7 @@ public class Tirelife extends Calculation{
 		}
 
 		System.out.println("Please Enter racetrack condition : " + "\n");
-		System.out.println("0. Good Maintained Track");
+		System.out.println("0. Well Maintained Track");
 		System.out.println("1. Badly Maintained Track");
 
 		while (true) {
@@ -340,10 +314,11 @@ public class Tirelife extends Calculation{
 				break;
 		}
 
-		int calc_life = calculate(calculated_life, track_distance, n_of_turns, racetrack_condition, tire_pressure, num_of_laps, lap_used, weight_of_client);
-		
-//Printing results here 
-		System.out.println("Tire Life Span : " + calc_life);
+//		int calc_life = calculate(calculated_life, track_distance, n_of_turns, racetrack_condition, tire_pressure,				
+//		num_of_laps, lap_used, weight_of_client);
+
+//		Printing results here 
+//		System.out.println("Tire Life Span : " + calc_life);
 
 	}
 }
