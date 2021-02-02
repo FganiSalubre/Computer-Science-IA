@@ -1,7 +1,8 @@
 package TirelifePackage;
 
 public class Calculation {
-	public static int calculate(int calculated_life, float track_distance, int n_of_turns, String racetrack_condition, float tire_pressure, int num_of_laps, int lap_used, float weight_of_client)
+	public static int calculate(int calculated_life, float track_distance, int n_of_turns, 
+			String racetrack_condition, float tire_pressure, int num_of_laps, int lap_used, float weight_of_client)
 	{
 //      deducting track_distance from calculated_life . if it's 2km , it will deduct 2 from the calculated_life
 		calculated_life = (int) (calculated_life - track_distance);
